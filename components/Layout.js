@@ -30,7 +30,7 @@ export default function Layout({children, commercePublicKey, title='GreenBajar'}
             const cartData=await commerce.cart.retrieve()
             dispatch({type:CART_RETRIEVE_SUCCESS,payload:cartData})
         }
-        fetchCart().then(r =>{} )
+        fetchCart().then(() =>{} )
     },[])
     
     console.log(cart)

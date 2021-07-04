@@ -11,16 +11,10 @@ import {
     ListItem,
     MenuItem,
     Select,
-    Slide, Step, StepLabel, Stepper,
-    Table,
-    TableBody,
-    TableCell,
-    TableContainer,
-    TableHead,
-    TableRow, TextField,
+     Step, StepLabel, Stepper,
+    TextField,
     Typography
 } from "@material-ui/core";
-import Link from 'next/link'
 
 import getCommerce from "../utils/commerce";
 import Layout from "../components/Layout";
