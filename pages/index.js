@@ -1,12 +1,35 @@
 import React from 'react'
 import {Alert} from '@material-ui/lab'
-import {Box, Card, CardActionArea, CardContent, CardMedia, Grid, Slide, Typography} from "@material-ui/core";
+import {
+    Box,
+    Card,
+    CardActionArea,
+    CardContent,
+    CardMedia,
+    Grid,
+    makeStyles,
+    Slide,
+    Typography
+} from "@material-ui/core";
 import Link from 'next/link'
 
 import getCommerce from "../utils/commerce";
 import Layout from "../components/Layout";
 
+
+
+const useStyles = makeStyles({
+    root: {
+        maxWidth: 345,
+    },
+    media: {
+        height: 160,
+    },
+});
+
 export default function Home(props) {
+    const classes = useStyles();
+
     const {products}=props
     return (
         <Layout title="home" commercePublicKey={props.commercePublicKey}>
@@ -18,7 +41,7 @@ export default function Home(props) {
                         <Card>
                             <Link href={`/products/${product.permalink}`} passHref>
                                 <CardActionArea>
-                                    <CardMedia component="img" alt={product.name} image={product.media.source}/>
+                                    <CardMedia className={classes.media} component="img" alt={product.name} image={product.media.source}/>
                                     <CardContent>
                                         <Typography gutterButtom variant="body2" color="textPrimary" component="p">
                                             {product.name}
